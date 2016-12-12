@@ -14,9 +14,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 
-import com.example.zbk.data.DataQuestion;
-import com.example.zbk.manager.DataManager;
-
 /**
  * Created by zhangbaokun on 05/12/2016.
  */
@@ -32,7 +29,6 @@ public class TestFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d("TestFragment","onCreateView");
-        DataQuestion dataFruit = DataManager.getInstance().getDataQuestion();
         View v = inflater.inflate(R.layout.fragment_test, container, false);
         EditText mEditText = (EditText)v.findViewById(R.id.test_editTextId);
         mEditText.addTextChangedListener(new TextWatcher() {

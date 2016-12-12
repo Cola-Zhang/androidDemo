@@ -1,9 +1,10 @@
 package com.example.zbk.demo;
 
-import android.support.v4.app.Fragment;
-import android.os.Bundle;
 
-public class MainActivity extends AppBaseActivity {
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+
+public class ListActivity extends AppBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,6 +14,6 @@ public class MainActivity extends AppBaseActivity {
 
     @Override
     public Fragment createCommonFragment() {
-        return new TestFragment();
+        return null;
     }
 }
