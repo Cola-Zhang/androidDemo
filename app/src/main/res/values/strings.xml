@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Demo</string>
+    <string name="test_editText">editText</string>
+    <string name="test_titleText">title</string>
+    <string name="test_detailTitleText">detail</string>
+    <string name="test_checkBoxText">checkBox</string>
+</resources>
