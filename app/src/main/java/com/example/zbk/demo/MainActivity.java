@@ -3,6 +3,8 @@ package com.example.zbk.demo;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 
+import com.example.zbk.fragment.MainFragment;
+
 public class MainActivity extends AppBaseActivity {
 
     @Override
@@ -13,6 +15,6 @@ public class MainActivity extends AppBaseActivity {
 
     @Override
     public Fragment createCommonFragment() {
-        return new TestFragment();
+        return new MainFragment();
     }
 }

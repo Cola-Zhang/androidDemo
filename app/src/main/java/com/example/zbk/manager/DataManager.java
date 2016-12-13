@@ -32,10 +32,11 @@ public class DataManager {
     }
 
     private DataManager(){
-        dataQuestions = new ArrayList<DataQuestion>();
+        dataQuestions = new ArrayList<>();
         for (int i=0;i<100;i++){
             DataQuestion dt = new DataQuestion(i+1);
             dt.setQuestionText("this is question"+(i+1));
+            dataQuestions.add(dt);
         }
     }
 

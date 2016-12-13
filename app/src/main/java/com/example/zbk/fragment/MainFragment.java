@@ -1,4 +1,4 @@
-package com.example.zbk.demo;
+package com.example.zbk.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -14,22 +14,24 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 
+import com.example.zbk.demo.R;
+
 /**
  * Created by zhangbaokun on 05/12/2016.
  */
 
-public class TestFragment extends Fragment {
+public class MainFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("TestFragment","onCreate");
+        Log.d("MainFragment","onCreate");
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d("TestFragment","onCreateView");
-        View v = inflater.inflate(R.layout.fragment_test, container, false);
+        Log.d("MainFragment","onCreateView");
+        View v = inflater.inflate(R.layout.fragment_main, container, false);
         EditText mEditText = (EditText)v.findViewById(R.id.test_editTextId);
         mEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -61,36 +63,36 @@ public class TestFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Log.d("TestFragment","onActivityCreated");
+        Log.d("MainFragment","onActivityCreated");
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        Log.d("TestFragment","onAttach");
+        Log.d("MainFragment","onAttach");
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        Log.d("TestFragment","onStart");
+        Log.d("MainFragment","onStart");
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Log.d("TestFragment","onResume");
+        Log.d("MainFragment","onResume");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.d("TestFragment","onDestroy");
+        Log.d("MainFragment","onDestroy");
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        Log.d("TestFragment","onDetach");
+        Log.d("MainFragment","onDetach");
     }
 }
