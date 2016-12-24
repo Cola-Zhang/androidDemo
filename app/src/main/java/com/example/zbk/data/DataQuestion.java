@@ -13,14 +13,20 @@ public class DataQuestion {
         return questionText;
     }
 
+    public boolean getIsSelect(){
+        return isSelect;
+    }
+
     public void setQuestionText(String questionText) {
         this.questionText = questionText;
     }
 
     public DataQuestion(int questionId){
         this.questionId = questionId;
+        this.isSelect = questionId%2==0;
     }
 
     private int questionId;
     private String questionText;
+    private boolean isSelect;
 }

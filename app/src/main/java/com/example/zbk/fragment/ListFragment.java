@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.example.zbk.data.DataQuestion;
@@ -41,11 +42,21 @@ public class ListFragment extends Fragment {
     private ItemAdapter itemAdapter;
 
     private class ItemHolder extends RecyclerView.ViewHolder {
-        public TextView titleView;
+        private TextView titleView;
+        private TextView infoView;
+        private CheckBox checkBox;
 
         public ItemHolder(View itemView){
             super(itemView);
-            titleView = (TextView)itemView;
+            titleView = (TextView)itemView.findViewById(R.id.list_item_id);
+            infoView = (TextView)itemView.findViewById(R.id.list_item_info_id);
+            checkBox = (CheckBox)itemView.findViewById(R.id.list_item_checkBox_id);
+        }
+
+        public void bindQuestion(DataQuestion dataQuestion){
+            titleView.setText(dataQuestion.getQuestionId()+"");
+            infoView.setText(dataQuestion.getQuestionText());
+            checkBox.setChecked(dataQuestion.getIsSelect());
         }
     }
 
@@ -57,7 +68,7 @@ public class ListFragment extends Fragment {
         @Override
         public ItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-            View view = layoutInflater.inflate(android.R.layout.simple_list_item_1, parent, false);
+            View view = layoutInflater.inflate(R.layout.list_item, parent, false);
             return new ItemHolder(view);
         }
 
@@ -69,8 +80,7 @@ public class ListFragment extends Fragment {
         @Override
         public void onBindViewHolder(ItemHolder holder, int position) {
             DataQuestion dataQuestion = list.get(position);
-            Log.d("ListFragment", dataQuestion.getQuestionText());
-            holder.titleView.setText(dataQuestion.getQuestionText());
+            holder.bindQuestion(dataQuestion);
         }
 
         private List<DataQuestion> list;
