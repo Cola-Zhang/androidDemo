@@ -1,5 +1,6 @@
 package com.example.zbk.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,14 +14,13 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.example.zbk.data.DataQuestion;
+import com.example.zbk.demo.DescActivity;
+import com.example.zbk.demo.ListActivity;
 import com.example.zbk.demo.R;
 import com.example.zbk.manager.DataManager;
 
 import java.util.List;
 
-/**
- * Created by zhangbaokun on 12/12/2016.
- */
 
 public class ListFragment extends Fragment {
 
@@ -55,8 +55,22 @@ public class ListFragment extends Fragment {
         return v;
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d("ListFragment", "onActivityResult " + requestCode);
+        if(requestCode == 1){
 
+        }
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (itemAdapter != null) {
+            itemAdapter.notifyDataSetChanged();
+        }
+    }
 
     private RecyclerView recyclerView;
     private ItemAdapter itemAdapter;
@@ -65,15 +79,26 @@ public class ListFragment extends Fragment {
         private TextView titleView;
         private TextView infoView;
         private CheckBox checkBox;
+        private DataQuestion dataQuestion;
 
         public ItemHolder(View itemView){
             super(itemView);
             titleView = (TextView)itemView.findViewById(R.id.list_item_id);
             infoView = (TextView)itemView.findViewById(R.id.list_item_info_id);
             checkBox = (CheckBox)itemView.findViewById(R.id.list_item_checkBox_id);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d("ListFragment", "itemView click!");
+                    Intent intent = DescActivity.newIntent(getActivity(), dataQuestion.getQuestionId());
+
+                    startActivityForResult(intent,1);
+                }
+            });
         }
 
         public void bindQuestion(DataQuestion dataQuestion){
+            this.dataQuestion = dataQuestion;
             titleView.setText(dataQuestion.getQuestionId()+"");
             infoView.setText(dataQuestion.getQuestionText());
             checkBox.setChecked(dataQuestion.getIsSelect());

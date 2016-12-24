@@ -7,11 +7,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/test_titleTextId"
+        android:id="@+id/desc_titleTextId"
         android:text="@string/test_titleText"
         />
 
-    <EditText android:id="@+id/test_editTextId"
+    <EditText android:id="@+id/desc_editTextId"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:hint="@string/test_editText"
@@ -21,7 +21,7 @@
         android:text="@string/test_detailTitleText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/test_detailTitieTextId"/>
+        android:id="@+id/desc_detailTitleId"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -34,14 +34,28 @@
             android:text="Date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/test_dateBtnId"
+            android:id="@+id/desc_dateBtnId"
             android:layout_weight="1"/>
 
         <CheckBox
             android:text="@string/test_checkBoxText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/test_checkBoxId"
+            android:id="@+id/desc_checkBoxId"
+            android:layout_weight="1"/>
+
+        <Button
+            android:text="Confirm"
+            android:layout_height="wrap_content"
+            android:id="@+id/desc_confirmBtnId"
+            android:layout_weight="1"
+            android:layout_width="0dp"/>
+
+        <Button
+            android:text="Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/desc_returnBtnId"
             android:layout_weight="1"/>
 
     </LinearLayout>

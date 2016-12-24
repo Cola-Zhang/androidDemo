@@ -21,6 +21,10 @@ public class DataQuestion {
         this.questionText = questionText;
     }
 
+    public void setSelect(boolean isSelect){
+        this.isSelect = isSelect;
+    }
+
     public DataQuestion(int questionId){
         this.questionId = questionId;
         this.isSelect = questionId%2==0;
