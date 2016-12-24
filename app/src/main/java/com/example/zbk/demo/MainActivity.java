@@ -16,6 +16,6 @@ public class MainActivity extends AppBaseActivity {
 
     @Override
     public Fragment createCommonFragment() {
-        return new MainFragment();
+        return MainFragment.newInstance();
     }
 }

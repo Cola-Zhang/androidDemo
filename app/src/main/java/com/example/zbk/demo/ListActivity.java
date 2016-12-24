@@ -18,6 +18,6 @@ public class ListActivity extends AppBaseActivity {
 
     @Override
     public Fragment createCommonFragment() {
-        return new ListFragment();
+        return ListFragment.newInstance();
     }
 }

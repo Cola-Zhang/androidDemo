@@ -23,6 +23,23 @@ import java.util.List;
  */
 
 public class ListFragment extends Fragment {
+
+    public static ListFragment newInstance() {
+        ListFragment fragment = new ListFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+
+        }
+    }
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -37,6 +54,9 @@ public class ListFragment extends Fragment {
 
         return v;
     }
+
+
+
 
     private RecyclerView recyclerView;
     private ItemAdapter itemAdapter;

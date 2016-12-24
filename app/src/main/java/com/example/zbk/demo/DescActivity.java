@@ -15,6 +15,6 @@ public class DescActivity extends AppBaseActivity {
 
     @Override
     public Fragment createCommonFragment() {
-        return new DescFragment();
+        return DescFragment.newInstance();
     }
 }

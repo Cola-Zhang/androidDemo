@@ -21,11 +21,22 @@ import com.example.zbk.demo.R;
  */
 
 public class DescFragment extends Fragment {
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d("MainFragment","onCreate");
+
+    public static DescFragment newInstance() {
+        DescFragment fragment = new DescFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
     }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+
+        }
+    }
+
 
     @Nullable
     @Override
