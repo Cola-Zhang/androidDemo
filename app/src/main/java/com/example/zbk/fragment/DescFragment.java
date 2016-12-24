@@ -20,7 +20,7 @@ import com.example.zbk.demo.R;
  * Created by zhangbaokun on 05/12/2016.
  */
 
-public class MainFragment extends Fragment {
+public class DescFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d("MainFragment","onCreateView");
-        View v = inflater.inflate(R.layout.fragment_main, container, false);
+        View v = inflater.inflate(R.layout.fragment_desc, container, false);
         EditText mEditText = (EditText)v.findViewById(R.id.test_editTextId);
         mEditText.addTextChangedListener(new TextWatcher() {
             @Override

@@ -3,9 +3,9 @@ package com.example.zbk.demo;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 
-import com.example.zbk.fragment.MainFragment;
+import com.example.zbk.fragment.DescFragment;
 
-public class MainActivity extends AppBaseActivity {
+public class DescActivity extends AppBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +15,6 @@ public class MainActivity extends AppBaseActivity {
 
     @Override
     public Fragment createCommonFragment() {
-        return new MainFragment();
+        return new DescFragment();
     }
 }
