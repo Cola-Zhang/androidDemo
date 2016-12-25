@@ -22,6 +22,7 @@ public class DescActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_desc);
+
         viewPager = (ViewPager)findViewById(R.id.activity_desc_pager_view_id);
         FragmentManager fragmentManager = getSupportFragmentManager();
         int targetQuestionId = (int)getIntent().getSerializableExtra("desc_questionId");

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -91,6 +92,16 @@ public class DescFragment extends Fragment {
                 boolean isSelect = checkBox.isSelected();
                 question.setQuestionText(text);
                 question.setSelect(isSelect);
+            }
+        });
+
+        Button dialogButton = (Button)v.findViewById(R.id.desc_dialogBtnId);
+        dialogButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getFragmentManager();
+                DialogPickerFragment dialog = new DialogPickerFragment();
+                dialog.show(fragmentManager, "DialogDate");
             }
         });
 
