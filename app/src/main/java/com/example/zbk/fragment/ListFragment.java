@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.example.zbk.data.DataQuestion;
 import com.example.zbk.demo.DescActivity;
-import com.example.zbk.demo.ListActivity;
 import com.example.zbk.demo.R;
 import com.example.zbk.manager.DataManager;
 
