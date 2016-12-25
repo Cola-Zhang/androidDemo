@@ -1,5 +1,7 @@
 package com.example.zbk.data;
 
+import java.util.Date;
+
 /**
  * Created by zhangbaokun on 12/12/2016.
  */
@@ -17,6 +19,14 @@ public class DataQuestion {
         return isSelect;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     public void setQuestionText(String questionText) {
         this.questionText = questionText;
     }
@@ -28,9 +38,11 @@ public class DataQuestion {
     public DataQuestion(int questionId){
         this.questionId = questionId;
         this.isSelect = questionId%2==0;
+        this.date = new Date();
     }
 
     private int questionId;
     private String questionText;
     private boolean isSelect;
+    private Date date;
 }

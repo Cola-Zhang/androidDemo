@@ -1,6 +1,7 @@
 package com.example.zbk.fragment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,6 +20,8 @@ import android.widget.EditText;
 import com.example.zbk.data.DataQuestion;
 import com.example.zbk.demo.R;
 import com.example.zbk.manager.DataManager;
+
+import java.util.Date;
 
 
 public class DescFragment extends Fragment {
@@ -100,10 +103,14 @@ public class DescFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentManager fragmentManager = getFragmentManager();
-                DialogPickerFragment dialog = new DialogPickerFragment();
+                DialogPickerFragment dialog = DialogPickerFragment.newInstance(question.getDate());
+                dialog.setTargetFragment(DescFragment.this, 0);
                 dialog.show(fragmentManager, "DialogDate");
             }
         });
+
+        dateBtn = (Button)v.findViewById(R.id.desc_dateBtnId);
+        updateDate(question);
 
         return v;
     }
@@ -114,6 +121,23 @@ public class DescFragment extends Fragment {
         Log.d("DescFragment","onActivityCreated");
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode != Activity.RESULT_OK) {
+            return;
+        }
+        if (requestCode == 0 ){
+            Date date = (Date)data.getSerializableExtra("dialog_date");
+            DataQuestion question = DataManager.getInstance().getDataQuestion(questionId);
+            question.setDate(date);
+            updateDate(question);
+        }
+    }
+
+    private void updateDate(DataQuestion question) {
+        dateBtn.setText(question.getDate().toString());
+    }
 
     private int questionId;
+    private Button dateBtn;
 }
